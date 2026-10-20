@@ -1,0 +1,714 @@
+<!doctype html>
+
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Liquid Glass Speedtest Pro</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed": "#23005c",
+              "surface-container-highest": "#31353f",
+              "surface-container-lowest": "#0a0e17",
+              "on-primary-fixed-variant": "#004f54",
+              "on-tertiary-container": "#005ac3",
+              "inverse-on-surface": "#2c303b",
+              "on-secondary-container": "#c4abff",
+              "on-tertiary-fixed": "#001a42",
+              "tertiary-container": "#cad9ff",
+              "tertiary-fixed-dim": "#adc6ff",
+              "on-error-container": "#ffdad6",
+              "surface-container-high": "#262a34",
+              "surface-tint": "#00dbe9",
+              "on-error": "#690005",
+              "on-primary-fixed": "#002022",
+              primary: "#dbfcff",
+              surface: "#0f131d",
+              background: "#0f131d",
+              tertiary: "#f4f5ff",
+              "on-secondary": "#3c0091",
+              "primary-fixed-dim": "#00dbe9",
+              "inverse-surface": "#dfe2f0",
+              secondary: "#d0bcff",
+              "on-tertiary": "#002e6a",
+              "on-secondary-fixed-variant": "#5516be",
+              "secondary-fixed-dim": "#d0bcff",
+              "on-primary-container": "#006970",
+              "secondary-container": "#571bc1",
+              "error-container": "#93000a",
+              "on-surface": "#dfe2f0",
+              outline: "#849495",
+              "surface-container": "#1b2029",
+              error: "#ffb4ab",
+              "primary-fixed": "#7df4ff",
+              "surface-bright": "#353944",
+              "secondary-fixed": "#e9ddff",
+              "on-primary": "#00363a",
+              "on-tertiary-fixed-variant": "#004395",
+              "surface-variant": "#31353f",
+              "on-surface-variant": "#b9cacb",
+              "on-background": "#dfe2f0",
+              "outline-variant": "#3b494b",
+              "surface-container-low": "#171c25",
+              "surface-dim": "#0f131d",
+              "inverse-primary": "#006970",
+              "primary-container": "#00f0ff",
+              "tertiary-fixed": "#d8e2ff",
+            },
+            borderRadius: {
+              DEFAULT: "1rem",
+              lg: "2rem",
+              xl: "3rem",
+              full: "9999px",
+            },
+            fontFamily: {
+              sans: ["Plus Jakarta Sans", "sans-serif"],
+              mono: ["JetBrains Mono", "monospace"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+
+  <body
+    class="bg-background text-on-surface antialiased min-h-screen relative overflow-x-hidden selection:bg-primary-container selection:text-on-primary"
+  >
+    <!-- Ambient Fluid Glow Background Canvas -->
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+      <!-- Cyan orb -->
+      <div
+        class="absolute -top-[10%] -left-[15%] w-[420px] h-[420px] rounded-full bg-[#00f0ff] opacity-[0.16] blur-[110px]"
+      ></div>
+      <!-- Electric Violet orb -->
+      <div
+        class="absolute top-[35%] -right-[20%] w-[480px] h-[480px] rounded-full bg-[#8b5cf6] opacity-[0.18] blur-[130px]"
+      ></div>
+      <!-- Deep oceanic core -->
+      <div
+        class="absolute bottom-[10%] left-[10%] w-[360px] h-[360px] rounded-full bg-[#005ac3] opacity-[0.14] blur-[100px]"
+      ></div>
+      <!-- Subtle Grid overlay -->
+      <div
+        class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(255,255,255,0.02)_0%,_transparent_70%)]"
+      ></div>
+    </div>
+    <!-- Main Mobile App Wrapper -->
+    <main
+      class="relative z-10 max-w-md mx-auto min-h-screen flex flex-col justify-between px-4 pt-3 pb-8 font-sans"
+    >
+      <!-- Top Status & Network Bar -->
+      <header class="flex flex-col gap-3">
+        <!-- Status Bar Top Indicators -->
+        <div
+          class="flex items-center justify-between text-on-surface-variant text-xs px-2 pt-1 font-mono"
+        >
+          <span class="font-semibold text-primary">5G+ ULTRA-BAND</span>
+          <div class="flex items-center gap-1.5">
+            <span
+              class="inline-block w-2 h-2 rounded-full bg-primary-container shadow-[0_0_8px_#00f0ff]"
+            ></span>
+            <span class="text-on-surface tracking-wider">LATENCY: 8ms</span>
+          </div>
+        </div>
+        <!-- Floating Liquid Glass Network Capsule -->
+        <div
+          class="glass-panel rounded-2xl p-3.5 relative overflow-hidden transition-all duration-300"
+        >
+          <div
+            class="glass-lens-reflection absolute inset-0 pointer-events-none"
+          ></div>
+          <div class="flex items-center justify-between gap-3 relative z-10">
+            <div class="flex items-center gap-3">
+              <div
+                class="w-10 h-10 rounded-xl bg-surface-container-high/80 border border-white/10 flex items-center justify-center text-primary-container shadow-inner"
+              >
+                <span
+                  class="material-symbols-outlined text-2xl"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >wifi</span
+                >
+              </div>
+              <div>
+                <div class="flex items-center gap-2">
+                  <span
+                    class="text-xs font-semibold tracking-wider text-primary-fixed uppercase"
+                    >Connected Link</span
+                  >
+                  <span
+                    class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[10px] bg-primary-container/10 border border-primary-container/30 text-primary-container font-medium"
+                  >
+                    Wi-Fi 6E (5 GHz)
+                  </span>
+                </div>
+                <p class="text-sm font-bold text-white tracking-tight mt-0.5">
+                  Sonic Fiber Telecom • 1 Gbps Tier
+                </p>
+                <div
+                  class="flex items-center gap-2 text-[11px] text-on-surface-variant font-mono mt-0.5"
+                >
+                  <span>IP: 198.51.100.42</span>
+                  <span class="text-outline-variant">•</span>
+                  <span
+                    class="text-primary-fixed-dim flex items-center gap-0.5"
+                  >
+                    <span class="material-symbols-outlined text-[13px]"
+                      >verified_user</span
+                    >
+                    Encrypted
+                  </span>
+                </div>
+              </div>
+            </div>
+            <button
+              class="w-8 h-8 rounded-full bg-surface-container-highest/60 hover:bg-surface-container-highest border border-white/10 flex items-center justify-center text-on-surface transition-colors cursor-pointer"
+              title="Network Diagnostics"
+            >
+              <span class="material-symbols-outlined text-[18px]">info</span>
+            </button>
+          </div>
+        </div>
+      </header>
+      <!-- Hero Liquid Speed Gauge Section -->
+      <section class="flex flex-col items-center justify-center my-4 relative">
+        <!-- Ambient Glow Behind Speedometer -->
+        <div
+          class="absolute w-64 h-64 rounded-full bg-gradient-to-tr from-primary-container/20 via-secondary-container/20 to-transparent blur-3xl pointer-events-none"
+        ></div>
+        <!-- Outer Liquid Ring Container -->
+        <div
+          class="relative w-72 h-72 flex items-center justify-center animate-liquid-pulse"
+        >
+          <!-- SVG Gauge Dial with Fluid Refractive Track -->
+          <svg
+            class="w-full h-full -rotate-90 gauge-liquid-meter"
+            viewbox="0 0 280 280"
+          >
+            <defs>
+              <!-- Glowing Liquid Gradient -->
+              <lineargradient
+                id="liquidCyanViolet"
+                x1="0%"
+                x2="100%"
+                y1="0%"
+                y2="100%"
+              >
+                <stop offset="0%" stop-color="#00f0ff"></stop>
+                <stop offset="45%" stop-color="#38bdf8"></stop>
+                <stop offset="80%" stop-color="#8b5cf6"></stop>
+                <stop offset="100%" stop-color="#c084fc"></stop>
+              </lineargradient>
+              <!-- Track Glass Glow Filter -->
+              <filter
+                height="140%"
+                id="glassRefract"
+                width="140%"
+                x="-20%"
+                y="-20%"
+              >
+                <fegaussianblur result="blur" stddeviation="4"></fegaussianblur>
+                <fecomposite
+                  in="SourceGraphic"
+                  in2="blur"
+                  operator="over"
+                ></fecomposite>
+              </filter>
+            </defs>
+            <!-- Glass Gauge Outer Rim -->
+            <circle
+              cx="140"
+              cy="140"
+              fill="none"
+              r="118"
+              stroke="rgba(255, 255, 255, 0.05)"
+              stroke-linecap="round"
+              stroke-width="14"
+            ></circle>
+            <!-- Tick Subdivisions -->
+            <circle
+              cx="140"
+              cy="140"
+              fill="none"
+              r="118"
+              stroke="rgba(255, 255, 255, 0.12)"
+              stroke-dasharray="2 18"
+              stroke-linecap="round"
+              stroke-width="12"
+            ></circle>
+            <!-- Dynamic Active Liquid Progress Arc (~75% fill) -->
+            <circle
+              class="transition-all duration-1000 ease-out"
+              cx="140"
+              cy="140"
+              fill="none"
+              r="118"
+              stroke="url(#liquidCyanViolet)"
+              stroke-dasharray="741"
+              stroke-dashoffset="195"
+              stroke-linecap="round"
+              stroke-width="14"
+            ></circle>
+            <!-- Peak Speed Indicator Point -->
+            <circle
+              class="filter drop-shadow-[0_0_8px_#ffffff]"
+              cx="218"
+              cy="46"
+              fill="#ffffff"
+              r="4.5"
+            ></circle>
+          </svg>
+          <!-- Inner Glass Sphere Cavity -->
+          <div
+            class="absolute w-52 h-52 rounded-full glass-panel flex flex-col items-center justify-center p-4 text-center border border-white/20 shadow-[inset_0_4px_25px_rgba(255,255,255,0.15)] overflow-hidden"
+          >
+            <!-- Liquid Ripple Specular Highlight -->
+            <div
+              class="absolute -top-10 left-1/4 w-32 h-20 bg-gradient-to-b from-white/25 to-transparent rounded-full blur-[2px] transform -rotate-12 pointer-events-none"
+            ></div>
+            <!-- Live Ping Ring & Status -->
+            <div
+              class="flex items-center gap-1.5 mb-1 bg-surface-container-lowest/50 px-2.5 py-0.5 rounded-full border border-white/10"
+            >
+              <span
+                class="w-2 h-2 rounded-full bg-primary-container animate-ping"
+              ></span>
+              <span
+                class="text-[10px] tracking-wider font-mono uppercase text-primary-fixed"
+                >Streaming Packets</span
+              >
+            </div>
+            <!-- Giant Digital Readout -->
+            <div class="relative flex items-baseline justify-center">
+              <span
+                class="text-5xl font-extrabold tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white via-primary to-primary-fixed-dim drop-shadow-sm font-mono"
+              >
+                748.2
+              </span>
+            </div>
+            <span
+              class="text-xs font-bold tracking-widest text-primary uppercase mt-0.5"
+            >
+              Mbps Download
+            </span>
+            <!-- Peak Speed Fluid Pill -->
+            <div
+              class="mt-2 text-[11px] font-medium text-on-surface-variant flex items-center gap-1 bg-white/5 px-2.5 py-0.5 rounded-full border border-white/5"
+            >
+              <span class="material-symbols-outlined text-[13px] text-secondary"
+                >trending_up</span
+              >
+              <span
+                >Peak:
+                <strong class="text-white font-mono">812.5</strong> Mbps</span
+              >
+            </div>
+          </div>
+        </div>
+        <!-- Action Trigger: Floating Shimmer Glass Pill Button -->
+        <div class="mt-4 w-full px-6 flex justify-center">
+          <button
+            class="relative group overflow-hidden w-full max-w-[280px] h-13 py-3 px-6 rounded-full glass-panel border border-primary-container/40 flex items-center justify-center gap-3 bg-gradient-to-r from-primary-container/20 to-secondary-container/25 hover:from-primary-container/30 hover:to-secondary-container/35 active:scale-[0.98] transition-all duration-300 shadow-lg glass-glow-cyan"
+          >
+            <!-- Shimmer reflection stripe -->
+            <div
+              class="absolute inset-0 w-1/2 h-full bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 animate-shimmer pointer-events-none"
+            ></div>
+            <div
+              class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-bold shadow-[0_0_12px_#00f0ff]"
+            >
+              <span class="material-symbols-outlined text-lg">autorenew</span>
+            </div>
+            <span
+              class="font-bold text-white tracking-wide text-sm drop-shadow-sm"
+              >Test Again (Re-route)</span
+            >
+          </button>
+        </div>
+      </section>
+      <!-- Core 4-Metric Grid in Frosted Glass Tiles -->
+      <section class="grid grid-cols-2 gap-2.5 my-2">
+        <!-- Metric 1: Download -->
+        <div
+          class="glass-panel-subtle rounded-2xl p-3.5 relative overflow-hidden flex flex-col justify-between hover:border-primary-container/40 transition-colors"
+        >
+          <div
+            class="flex items-center justify-between text-xs text-on-surface-variant"
+          >
+            <div class="flex items-center gap-1.5">
+              <span
+                class="w-2 h-2 rounded-full bg-primary-container shadow-[0_0_6px_#00f0ff]"
+              ></span>
+              <span
+                class="font-bold text-[11px] tracking-wider uppercase text-on-surface"
+                >Download</span
+              >
+            </div>
+            <span
+              class="material-symbols-outlined text-primary-container text-[16px]"
+              >arrow_downward</span
+            >
+          </div>
+          <div class="my-2">
+            <div class="flex items-baseline gap-1">
+              <span class="text-2xl font-bold font-mono text-white">748.2</span>
+              <span class="text-[11px] font-semibold text-primary-fixed-dim"
+                >Mbps</span
+              >
+            </div>
+            <div
+              class="text-[10px] text-on-surface-variant flex items-center gap-1 mt-0.5"
+            >
+              <span>Bufferbloat: </span>
+              <span class="text-primary-container font-mono font-medium"
+                >A+ Grade</span
+              >
+            </div>
+          </div>
+          <!-- Micro Sparkline SVG -->
+          <div class="w-full h-5 mt-1">
+            <svg class="w-full h-full overflow-visible" viewbox="0 0 100 24">
+              <path
+                d="M0,18 Q15,19 25,12 T50,8 T75,4 T100,2"
+                fill="none"
+                stroke="#00f0ff"
+                stroke-linecap="round"
+                stroke-width="2.5"
+              ></path>
+              <path
+                d="M0,18 Q15,19 25,12 T50,8 T75,4 T100,2 L100,24 L0,24 Z"
+                fill="url(#cyanSparkGrad)"
+                opacity="0.25"
+              ></path>
+              <defs>
+                <lineargradient id="cyanSparkGrad" x1="0" x2="0" y1="0" y2="1">
+                  <stop offset="0%" stop-color="#00f0ff"></stop>
+                  <stop offset="100%" stop-color="transparent"></stop>
+                </lineargradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+        <!-- Metric 2: Upload -->
+        <div
+          class="glass-panel-subtle rounded-2xl p-3.5 relative overflow-hidden flex flex-col justify-between hover:border-secondary/40 transition-colors"
+        >
+          <div
+            class="flex items-center justify-between text-xs text-on-surface-variant"
+          >
+            <div class="flex items-center gap-1.5">
+              <span
+                class="w-2 h-2 rounded-full bg-secondary shadow-[0_0_6px_#d0bcff]"
+              ></span>
+              <span
+                class="font-bold text-[11px] tracking-wider uppercase text-on-surface"
+                >Upload</span
+              >
+            </div>
+            <span class="material-symbols-outlined text-secondary text-[16px]"
+              >arrow_upward</span
+            >
+          </div>
+          <div class="my-2">
+            <div class="flex items-baseline gap-1">
+              <span class="text-2xl font-bold font-mono text-white">108.4</span>
+              <span class="text-[11px] font-semibold text-secondary">Mbps</span>
+            </div>
+            <div
+              class="text-[10px] text-on-surface-variant flex items-center gap-1 mt-0.5"
+            >
+              <span>Payload: </span>
+              <span class="text-secondary font-mono font-medium"
+                >100% Intact</span
+              >
+            </div>
+          </div>
+          <!-- Micro Sparkline SVG -->
+          <div class="w-full h-5 mt-1">
+            <svg class="w-full h-full overflow-visible" viewbox="0 0 100 24">
+              <path
+                d="M0,20 Q20,16 35,14 T65,8 T85,9 T100,5"
+                fill="none"
+                stroke="#c084fc"
+                stroke-linecap="round"
+                stroke-width="2.5"
+              ></path>
+              <path
+                d="M0,20 Q20,16 35,14 T65,8 T85,9 T100,5 L100,24 L0,24 Z"
+                fill="url(#violetSparkGrad)"
+                opacity="0.25"
+              ></path>
+              <defs>
+                <lineargradient
+                  id="violetSparkGrad"
+                  x1="0"
+                  x2="0"
+                  y1="0"
+                  y2="1"
+                >
+                  <stop offset="0%" stop-color="#c084fc"></stop>
+                  <stop offset="100%" stop-color="transparent"></stop>
+                </lineargradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+        <!-- Metric 3: Ping / Latency -->
+        <div
+          class="glass-panel-subtle rounded-2xl p-3.5 flex flex-col justify-between"
+        >
+          <div
+            class="flex items-center justify-between text-xs text-on-surface-variant"
+          >
+            <div class="flex items-center gap-1.5">
+              <span
+                class="material-symbols-outlined text-tertiary-fixed-dim text-[15px]"
+                >timer</span
+              >
+              <span
+                class="font-bold text-[11px] tracking-wider uppercase text-on-surface"
+                >Latency</span
+              >
+            </div>
+            <span
+              class="text-[10px] font-mono text-primary bg-primary/10 px-1.5 py-0.5 rounded"
+              >Optimum</span
+            >
+          </div>
+          <div class="my-2">
+            <div class="flex items-baseline gap-1">
+              <span class="text-2xl font-bold font-mono text-white">8.4</span>
+              <span class="text-[11px] font-semibold text-on-surface-variant"
+                >ms</span
+              >
+            </div>
+            <div
+              class="flex items-center justify-between text-[10px] text-on-surface-variant font-mono mt-1 pt-1 border-t border-white/5"
+            >
+              <span>Idle: <strong class="text-white">8.4ms</strong></span>
+              <span
+                >Loaded:
+                <strong class="text-primary-fixed">11.2ms</strong></span
+              >
+            </div>
+          </div>
+        </div>
+        <!-- Metric 4: Jitter Stability -->
+        <div
+          class="glass-panel-subtle rounded-2xl p-3.5 flex flex-col justify-between"
+        >
+          <div
+            class="flex items-center justify-between text-xs text-on-surface-variant"
+          >
+            <div class="flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-secondary text-[15px]"
+                >graphic_eq</span
+              >
+              <span
+                class="font-bold text-[11px] tracking-wider uppercase text-on-surface"
+                >Jitter</span
+              >
+            </div>
+            <span
+              class="text-[10px] font-mono text-emerald-400 bg-emerald-950/40 border border-emerald-500/20 px-1.5 py-0.5 rounded"
+              >Stable</span
+            >
+          </div>
+          <div class="my-2">
+            <div class="flex items-baseline gap-1">
+              <span class="text-2xl font-bold font-mono text-white">0.9</span>
+              <span class="text-[11px] font-semibold text-on-surface-variant"
+                >ms</span
+              >
+            </div>
+            <div
+              class="flex items-center justify-between text-[10px] text-on-surface-variant font-mono mt-1 pt-1 border-t border-white/5"
+            >
+              <span
+                >Fluctuation:
+                <strong class="text-emerald-400">±0.2ms</strong></span
+              >
+              <span>Grade: <strong class="text-white">A+</strong></span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Real-Time Throughput Fluid Waveform Card -->
+      <section
+        class="glass-panel rounded-2xl p-4 my-2 relative overflow-hidden"
+      >
+        <div
+          class="glass-lens-reflection absolute inset-0 pointer-events-none"
+        ></div>
+        <div class="flex items-center justify-between mb-3 relative z-10">
+          <div class="flex items-center gap-2">
+            <span
+              class="material-symbols-outlined text-primary-container text-[18px]"
+              >waves</span
+            >
+            <h3 class="text-xs font-bold text-white uppercase tracking-wider">
+              Live Packet Dynamics
+            </h3>
+          </div>
+          <div class="flex items-center gap-3 text-[10px] font-mono">
+            <span class="flex items-center gap-1 text-primary-container">
+              <span class="w-2 h-0.5 bg-primary-container inline-block"></span>
+              Download
+            </span>
+            <span class="flex items-center gap-1 text-secondary">
+              <span class="w-2 h-0.5 bg-secondary inline-block"></span> Upload
+            </span>
+          </div>
+        </div>
+        <!-- Waveform Canvas Mockup -->
+        <div class="w-full h-20 relative z-10">
+          <svg
+            class="w-full h-full"
+            preserveaspectratio="none"
+            viewbox="0 0 360 80"
+          >
+            <defs>
+              <lineargradient id="cyanWaveGrad" x1="0" x2="0" y1="0" y2="1">
+                <stop
+                  offset="0%"
+                  stop-color="#00f0ff"
+                  stop-opacity="0.35"
+                ></stop>
+                <stop
+                  offset="100%"
+                  stop-color="#00f0ff"
+                  stop-opacity="0.0"
+                ></stop>
+              </lineargradient>
+              <lineargradient id="violetWaveGrad" x1="0" x2="0" y1="0" y2="1">
+                <stop
+                  offset="0%"
+                  stop-color="#8b5cf6"
+                  stop-opacity="0.25"
+                ></stop>
+                <stop
+                  offset="100%"
+                  stop-color="#8b5cf6"
+                  stop-opacity="0.0"
+                ></stop>
+              </lineargradient>
+            </defs>
+            <!-- Upload Flow (Violet) -->
+            <path
+              d="M0,60 C40,65 70,50 110,55 C160,60 190,45 240,50 C290,55 320,40 360,42 L360,80 L0,80 Z"
+              fill="url(#violetWaveGrad)"
+            ></path>
+            <path
+              d="M0,60 C40,65 70,50 110,55 C160,60 190,45 240,50 C290,55 320,40 360,42"
+              fill="none"
+              stroke="#a855f7"
+              stroke-linecap="round"
+              stroke-width="2"
+            ></path>
+            <!-- Download Flow (Cyan) -->
+            <path
+              d="M0,45 C35,20 60,35 110,22 C170,8 210,28 260,14 C300,5 330,12 360,8 L360,80 L0,80 Z"
+              fill="url(#cyanWaveGrad)"
+            ></path>
+            <path
+              d="M0,45 C35,20 60,35 110,22 C170,8 210,28 260,14 C300,5 330,12 360,8"
+              fill="none"
+              stroke="#00f0ff"
+              stroke-linecap="round"
+              stroke-width="2.5"
+            ></path>
+            <!-- Live pulse head point -->
+            <circle
+              class="filter drop-shadow-[0_0_6px_#00f0ff]"
+              cx="360"
+              cy="8"
+              fill="#ffffff"
+              r="3.5"
+            ></circle>
+          </svg>
+        </div>
+        <!-- Timeline scale -->
+        <div
+          class="flex justify-between items-center text-[10px] font-mono text-outline mt-1 border-t border-white/5 pt-1.5 relative z-10"
+        >
+          <span>-15s</span>
+          <span>-10s</span>
+          <span>-5s</span>
+          <span class="text-primary-container font-semibold">NOW (0.00s)</span>
+        </div>
+      </section>
+      <!-- Target Server Glass Card -->
+      <section class="glass-panel-subtle rounded-2xl p-3.5 my-2">
+        <div class="flex items-center justify-between gap-3">
+          <div class="flex items-center gap-3">
+            <div
+              class="w-9 h-9 rounded-xl bg-surface-container/70 border border-white/10 flex items-center justify-center text-primary-fixed"
+            >
+              <span class="material-symbols-outlined text-[20px]">dns</span>
+            </div>
+            <div>
+              <div class="flex items-center gap-2">
+                <p class="text-xs font-bold text-white">
+                  Equinix SV5 • San Jose, CA
+                </p>
+                <span
+                  class="px-1.5 py-0.2 rounded text-[10px] bg-emerald-500/20 text-emerald-300 font-mono font-medium border border-emerald-500/30"
+                >
+                  8ms
+                </span>
+              </div>
+              <p class="text-[11px] text-on-surface-variant font-mono">
+                Hosted by PacketFabric • 12 mi away
+              </p>
+            </div>
+          </div>
+          <button
+            class="px-3 py-1.5 rounded-full text-xs font-semibold bg-white/5 hover:bg-white/10 border border-white/10 text-on-surface transition-colors cursor-pointer whitespace-nowrap"
+          >
+            Change
+          </button>
+        </div>
+      </section>
+      <!-- Share & Quick Verification Footer Bar -->
+      <footer class="pt-2 flex items-center justify-between gap-2.5">
+        <button
+          class="flex-1 glass-panel py-2.5 px-4 rounded-xl flex items-center justify-center gap-2 hover:bg-white/10 active:scale-95 transition-all text-xs font-bold text-white cursor-pointer"
+        >
+          <span
+            class="material-symbols-outlined text-[18px] text-primary-container"
+            >share</span
+          >
+          <span>Share Result Card</span>
+        </button>
+        <button
+          class="glass-panel-subtle py-2.5 px-3 rounded-xl flex items-center justify-center gap-1.5 hover:bg-white/10 active:scale-95 transition-all text-xs font-medium text-on-surface-variant cursor-pointer"
+          title="Cryptographic Speed Guarantee Proof"
+        >
+          <span class="material-symbols-outlined text-[16px] text-primary-fixed"
+            >verified</span
+          >
+          <span class="font-mono text-[11px]">#9B4F8E</span>
+        </button>
+      </footer>
+    </main>
+  </body>
+</html>
