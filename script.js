@@ -26,8 +26,29 @@ const testAgain = document.querySelector(
   ".mt-4.w-full.px-6.flex.justify-center",
 );
 
+const netSpeed = document.querySelector(
+  ".text-5xl.font-extrabold.tracking-tighter.text-transparent.bg-clip-text.bg-gradient-to-b.from-white.via-primary.to-primary-fixed-dim.drop-shadow-sm.font-mono",
+);
+netSpeed.innerText = navigator.connection?.downlink + " KB/S" || 00 + " KB/S";
+
 if (testAgain) {
-  console.log(navigator.connection.downlink);
+  testAgain.addEventListener("click", () => {
+    const target = navigator.connection?.downlink || 00;
+    let current = 0;
+    const increment = target / 30;
+    const stepTime = 1000 / 30;
+
+    const timer = setInterval(() => {
+      current += increment;
+
+      if (current >= target) {
+        current = target;
+        clearInterval(timer);
+      }
+      netSpeed.innerText = current.toFixed(3) + " KB/S";
+      console.log(current.toFixed(3));
+    }, stepTime);
+  });
 } else {
   console.log("Unable to reach the downlink value");
 }
