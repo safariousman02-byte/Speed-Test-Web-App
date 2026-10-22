@@ -90,3 +90,21 @@ console.log(getIpInfo().org);
 console.log(navigator.connection?.downlink * 100);
 document.querySelector(".classify").innerText =
   navigator.connection?.rtt || "UNKNOWN";
+
+document.querySelector(".uploadSpeed").innerText = "Loading...";
+
+async function getUploadSpeed() {
+  const file = new Blob([new Uint8Array(2 * 1024 * 1024)]);
+
+  const start = Date.now();
+  await fetch("https://httpbin.org/post", { method: "POST", body: file });
+  const time = (Date.now() - start) / 1000;
+
+  const speed = (file.size * 8) / time / 1000000;
+
+  document.querySelector(".uploadSpeed").innerText = (speed * 1000).toFixed(2);
+
+  console.log(speed);
+}
+
+getUploadSpeed();
