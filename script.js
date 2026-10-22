@@ -29,14 +29,18 @@ const testAgain = document.querySelector(
 const netSpeed = document.querySelector(
   ".text-5xl.font-extrabold.tracking-tighter.text-transparent.bg-clip-text.bg-gradient-to-b.from-white.via-primary.to-primary-fixed-dim.drop-shadow-sm.font-mono",
 );
-netSpeed.innerText = navigator.connection?.downlink + " KB/S" || 00 + " KB/S";
+netSpeed.innerText = "Loading...";
+netSpeed.innerText = navigator.connection?.downlink * 100 || 00;
+
+document.querySelector(".text-2xl.font-bold.font-mono.text-white").innerText =
+  navigator.connection?.downlink * 100;
 
 if (testAgain) {
   testAgain.addEventListener("click", () => {
-    const target = navigator.connection?.downlink || 00;
+    const target = navigator.connection?.downlink * 100 || 00;
     let current = 0;
     const increment = target / 30;
-    const stepTime = 1000 / 30;
+    const stepTime = 10000 / 30;
 
     const timer = setInterval(() => {
       current += increment;
@@ -45,7 +49,7 @@ if (testAgain) {
         current = target;
         clearInterval(timer);
       }
-      netSpeed.innerText = current.toFixed(3) + " KB/S";
+      netSpeed.innerText = current.toFixed(3);
       console.log(current.toFixed(3));
     }, stepTime);
   });
@@ -82,3 +86,7 @@ async function getIpInfo() {
 getIpInfo();
 
 console.log(getIpInfo().org);
+
+console.log(navigator.connection?.downlink * 100);
+document.querySelector(".classify").innerText =
+  navigator.connection?.rtt || "UNKNOWN";
