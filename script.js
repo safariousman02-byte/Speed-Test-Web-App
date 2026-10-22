@@ -39,8 +39,8 @@ if (testAgain) {
   testAgain.addEventListener("click", () => {
     const target = navigator.connection?.downlink * 100 || 00;
     let current = 0;
-    const increment = target / 30;
-    const stepTime = 10000 / 30;
+    const increment = 1;
+    const stepTime = 3000 / 30;
 
     const timer = setInterval(() => {
       current += increment;
@@ -49,8 +49,8 @@ if (testAgain) {
         current = target;
         clearInterval(timer);
       }
-      netSpeed.innerText = current.toFixed(3);
-      console.log(current.toFixed(3));
+      netSpeed.innerText = current;
+      console.log(current);
     }, stepTime);
   });
 } else {
